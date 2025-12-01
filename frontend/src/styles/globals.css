@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+@font-face {
+  font-family: 'Comico-Regular';
+  src: url('/fonts/Comico-Regular.woff2') format('woff2'),
+       url('/fonts/Comico-Regular.woff') format('woff'),
+       url('/fonts/Comico-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+body {
+  position: relative;
+  font-family: 'Comico-Regular' !important;
+  color: rgb(var(--foreground-rgb));
+  background: none; /* Remove background image here */
+  overflow: auto; /* Ensure the pseudo-element covers the entire viewport */
+}
+
+body::before {
+  content: '';
+  position: fixed; /* Fixed position ensures it covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #090a2a;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Ensure the main content remains above the pseudo-element */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+a, span, p, h1, h2,h3,h4,h5,h6, div {
+  font-family: 'Comico-Regular' ;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .wallet-adapter-button-trigger {
+    font-size: 10px !important;
+    padding: 10px !important;
+    background-color: transparent;
+    border: 2px solid #e664ac;
+    color: white;
+  }
+}
+
+.wallet-adapter-button {
+  font-family: 'Comico-Regular'  !important;
+  font-weight: 600 !important;
+  background-color: transparent !important;
+  border: 2px solid #e664ac !important;
+  color: white !important;
+
+}
+
+.wallet-adapter-button-start-icon {
+  display: none !important;
+}
+
+.modalFaq{
+  background-image: url("/bg1.png");
+  background-size: cover;
+  background-position: center;
+}
+.wallet-adapter-modal-wrapper {
+  background-image: url("/bg1.png") !important;
+  background-size: inherit !important;
+  background-position: center !important;
+}
+.border-primary{
+  border-color : #e664ac
+}
+
+.placeholder-primary { 
+  color: #fefa8f;
+}
+.text-primary {
+  color: #fefa8f;
+}
+
+::placeholder {
+  color: #fefa8f !important;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: #fefa8f !important;
+}
+.bg-primary {
+  background-color: #fefa8f;
+}
+input:focus-visible {
+  outline: 1px solid #e664ac;
+  border-radius: 3px;
+  box-shadow: 0px 0px 20px 0px #0ff;
+}
+
+select:focus-visible {
+  border: 2px dashed crimson;
+  border-radius: 3px;
+  outline: none;
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 100 172);
+}
+
+.bg-black{
+  background-color: #090a2a;
+}
